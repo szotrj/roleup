@@ -1,8 +1,17 @@
 import parliament
 
 
-def main(event):
-    analyze_policy(event['policy'])
+def main():
+    policy_doc = """{
+        "Version": "2012-10-17",
+        "Statement": {
+            "Effect": "Allow",
+            "Action": ["s3:GetObject"],
+            "Resource": "*"
+        }
+    }"""
+
+    analyze_policy(policy_doc)
 
 def analyze_policy(policy_doc):
     analyzed_policy = parliament.analyze_policy_string(policy_doc)
@@ -11,4 +20,4 @@ def analyze_policy(policy_doc):
         return vars(ef)
 
 if __name__ == "__main__":
-    main(event)
+    main()
