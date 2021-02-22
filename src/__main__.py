@@ -8,11 +8,6 @@ def parse_args():
     #
     return parser.parse_args()
 
-def do_stuff(args):
-    #
-    # ... main functionality goes in here ...
-    #
-
 def main():
     args = parse_args()
     analyze_policy(args)
